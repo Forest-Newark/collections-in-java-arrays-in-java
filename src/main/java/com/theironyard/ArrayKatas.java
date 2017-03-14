@@ -1,5 +1,8 @@
 package com.theironyard;
 
+import java.time.LocalDate;
+import java.util.Random;
+
 /**
  * This is another kata exercise. Follow the instructions below and implement
  * the methods as described.
@@ -18,6 +21,12 @@ public class ArrayKatas {
      * @return an array of five random ints
      */
     // todo: create fiveRandomInts() static method
+    public static int[] fiveRandomInts() {
+        Random rand = new Random();
+        int[] fiveRandom = {rand.nextInt(),rand.nextInt(),rand.nextInt(),rand.nextInt(),rand.nextInt()};
+        return fiveRandom;
+    }
+
 
     /**
      * Create a static method named threeArbitraryDates() that returns an array
@@ -27,6 +36,13 @@ public class ArrayKatas {
      * @return an array of three LocalDate objects
      */
     // todo: create threeArbitraryDates() method
+    public static LocalDate[] threeArbitraryDates() {
+        LocalDate[] dates = new LocalDate[3];
+        dates[0] = LocalDate.now();
+        dates[1] = LocalDate.now();
+        dates[2] = LocalDate.now();
+        return dates;
+    }
 
     /**
      * Create a static method named nullsToArbitraryStrings() that accepts an
@@ -51,6 +67,19 @@ public class ArrayKatas {
      * @return an array of five string where null values have been replaced with arbitrary strings
      */
     // todo: create nullsToArbitraryStrings() method
+    public static String[] nullsToArbitraryStrings(String[] source) {
+        String[] fillArray = {"sheep", "bread", "jar","cloud","dog"};
+        String[] newArray = new String[5];
+       for(int x = 0; x < source.length; x++) {
+           if(source[x] == null) {
+               newArray[x] = fillArray[x];
+           }else {
+               newArray[x] = source[x];
+           }
+       }
+        return newArray;
+
+    }
 
     /**
      * Create a static method named arrayIndexes() that accepts a single integer
@@ -64,5 +93,11 @@ public class ArrayKatas {
      * @return An array of ints, starting at 0 and continuing to n-1
      */
     // todo: create arrayIndexes() method
-
+    public static int[] arrayIndexes(int n) {
+        int[] newArray = new int[n];
+        for(int x = 0; x < newArray.length;x++) {
+            newArray[x] = x;
+        }
+        return newArray;
+    }
 }
